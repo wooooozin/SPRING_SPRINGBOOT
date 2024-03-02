@@ -1,7 +1,7 @@
 package com.woozi.learspringframwork.game;
 
-public class SuperGame implements Game {
-	
+public class PackmanGame implements Game {
+
 	public void up() {
 		System.out.println("JUMP!");
 	}
@@ -17,5 +17,6 @@ public class SuperGame implements Game {
 	public void right() {
 		System.out.println("Accelereate!");
 	}
+	
 
 }

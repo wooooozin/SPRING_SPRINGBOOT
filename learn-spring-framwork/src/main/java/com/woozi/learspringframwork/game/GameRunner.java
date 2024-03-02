@@ -2,14 +2,10 @@ package com.woozi.learspringframwork.game;
 
 public class GameRunner {
 	
-//	MarioGame game;
-	SuperGame game;
+	Game game;
 	
-//	public GameRunner(MarioGame game) {
-//		this.game = game;
-//	}
 
-	public GameRunner(SuperGame superGame) {
+	public GameRunner(Game superGame) {
 		this.game = superGame;
 	}
 
