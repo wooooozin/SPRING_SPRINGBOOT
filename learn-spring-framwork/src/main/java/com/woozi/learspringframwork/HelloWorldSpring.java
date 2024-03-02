@@ -1,21 +1,20 @@
 package com.woozi.learspringframwork;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.woozi.learspringframwork.game.Game;
 import com.woozi.learspringframwork.game.GameRunner;
 import com.woozi.learspringframwork.game.MarioGame;
 import com.woozi.learspringframwork.game.PackmanGame;
 import com.woozi.learspringframwork.game.SuperGame;
 
-public class AppGamingBasic {
+public class HelloWorldSpring {
 
 	public static void main(String[] args) {
+		// 스프링 콘텍스트실행
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
 		
-		Game superGame = new SuperGame();
-		Game marioGmae = new MarioGame();
-		Game packmanGame = new PackmanGame(); // 객체 생
-//		GameRunner gameRunner = new GameRunner(superGame);
-		GameRunner gameRunner2 = new GameRunner(packmanGame); // 객체 생성 + 의존성 주입
-//		gameRunner.run();
-		gameRunner2.run();
+		// 설정 @Configuration
+		System.out.println( context.getBean("name"));
 	}
 }
