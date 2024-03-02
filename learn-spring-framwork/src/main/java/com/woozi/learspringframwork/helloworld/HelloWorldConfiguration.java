@@ -1,7 +1,9 @@
-package com.woozi.learspringframwork;
+package com.woozi.learspringframwork.helloworld;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 record Person (String name, Integer age, Adress adress) { };
 record Adress (String detail, String city) { };
@@ -32,7 +34,15 @@ public class HelloWorldConfiguration {
 	}
 	
 	@Bean
+	@Primary
 	public Person personParameters(String name, Integer age, Adress adress) {
+		Person person = new Person(name, age, adress);
+		return person;
+	}
+	
+	@Bean
+	@Qualifier("personQ")
+	public Person personQuailifier(String name, Integer age, Adress adress) {
 		Person person = new Person(name, age, adress);
 		return person;
 	}
