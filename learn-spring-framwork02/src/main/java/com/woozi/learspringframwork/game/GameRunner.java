@@ -1,15 +1,16 @@
 package com.woozi.learspringframwork.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GameRunner {
 	
-	Game game;
+	private Game game;
 	
 
-	public GameRunner(Game superGame) {
-		this.game = superGame;
+	public GameRunner(@Qualifier("SuperGame") Game game) {
+		this.game = game;
 	}
 
 	public void run() {

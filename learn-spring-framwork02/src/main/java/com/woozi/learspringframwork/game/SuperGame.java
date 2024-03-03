@@ -1,8 +1,10 @@
 package com.woozi.learspringframwork.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier("SuperGame")
 public class SuperGame implements Game {
 	
 	public void up() {
