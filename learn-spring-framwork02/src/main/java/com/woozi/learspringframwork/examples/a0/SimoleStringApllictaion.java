@@ -1,26 +1,24 @@
-package com.woozi.learspringframwork;
+package com.woozi.learspringframwork.examples.a0;
+
+import java.util.Arrays;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.woozi.learspringframwork.game.Game;
-import com.woozi.learspringframwork.game.GameRunner;
-
 
 @Configuration
-@ComponentScan("com.woozi.learspringframwork.game")
-public class GamingAppLauncherApllictaion {
+@ComponentScan
+public class SimoleStringApllictaion {
 	
 	public static void main(String[] args) {
 		
 		try (
 				AnnotationConfigApplicationContext context = 
-				new AnnotationConfigApplicationContext(GamingAppLauncherApllictaion.class)
+				new AnnotationConfigApplicationContext(SimoleStringApllictaion.class)
 				) {
-			context.getBean(Game.class).up();
-			context.getBean(GameRunner.class).run();
+			Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::print);
 		} catch (BeansException e) {
 			e.printStackTrace();
 		}
